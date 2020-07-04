@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	searchBtn.addEventListener('click', e => {
 		e.preventDefault();
 		let str = searchInput.value.trim();
-		let url = `http://api.giphy.com/v1/gifs/search?q=${str}&api_key=${API_KEY}&limit=10`
+		let url = `https://api.giphy.com/v1/gifs/search?q=${str}&api_key=${API_KEY}&limit=10`
 
 		fetch(url)
 			.then(res => res.json())
