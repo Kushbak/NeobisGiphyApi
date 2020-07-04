@@ -1,0 +1,15 @@
+.output{
+	display: grid;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));  
+}
+
+figure{
+	display: flex;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	height: 100%;
+}
+figure img{
+	width: 100%;
+}
