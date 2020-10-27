@@ -10,16 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		fetch(url)
 			.then(res => res.json())
-			.then(content => {
-				console.log(content.data);
-				console.log('META', content.meta); 
-
+			.then(content => { 
 				let output = document.querySelector('.output');
-				let childs = output.children;
-				for (let child of childs) {
-					child.remove();
-				}
-
+				output.innerHTML = ''
 
 				content.data.forEach((item, i, arr) => {
 					let figure = document.createElement('figure');
@@ -30,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					figCap.textContent = item.title;
 					figure.appendChild(img);
 					figure.appendChild(figCap);
-					output.insertAdjacentElement('afterBegin', figure);  
+					output.appendChild(figure);  
 				})
 
 				searchInput.value = ''
